@@ -216,7 +216,8 @@ window.portfolioData = {
               title: "The Ultimate Guide To CBD & Sleep",
               brand: "CiiTECH",
               image: "assets/logo-ciitech.png",
-              link: "https://provacan.co.uk/blogs/cbd-academy/cbd-for-sleep"
+              link: "https://provacan.co.uk/blogs/cbd-academy/cbd-for-sleep",
+              externalOnly: true
             },
             {
               title: "CiiTECH Becomes Global Founder Partner of Tel-Aviv Heat",
@@ -321,7 +322,8 @@ window.portfolioData = {
         {
           title: "Caetano Veloso & Gilberto Gil - Press Conference - Perez Center for Peace",
           image: "assets/event-press-conference.jpg",
-          link: "https://www.ynet.co.il/articles/0,7340,L-4684480,00.html"
+          link: "https://www.ynet.co.il/articles/0,7340,L-4684480,00.html",
+          externalOnly: true
         },
         {
           title: "The Perfect Night",
@@ -359,9 +361,9 @@ window.portfolioData = {
       label: "E-Commerce",
       title: "E-Commerce",
       items: [
-        { title: "Provacan", image: "assets/logo-provacan.jpg", link: "https://provacan.co.uk/collections/all-cbd-products" },
-        { title: "HUGG", image: "assets/logo-hucc.png", link: "https://www.amazon.co.uk/CiiTECH-HuGG-Hydrating-Moisturising-Spectrum/dp/B09DD95TVV" },
-        { title: "Shufersal Magazine", image: "assets/logo-megadin-color.png", link: "https://magazine.shufersal.co.il/" }
+        { title: "Provacan", image: "assets/logo-provacan.jpg", link: "https://provacan.co.uk/collections/all-cbd-products", externalOnly: true },
+        { title: "HUGG", image: "assets/logo-hucc.png", link: "https://www.amazon.co.uk/CiiTECH-HuGG-Hydrating-Moisturising-Spectrum/dp/B09DD95TVV", externalOnly: true },
+        { title: "Shufersal Magazine", image: "assets/logo-megadin-color.png", link: "https://magazine.shufersal.co.il/", externalOnly: true }
       ]
     },
     {

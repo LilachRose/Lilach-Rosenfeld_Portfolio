@@ -190,7 +190,7 @@
     return `
       <div class="cards-grid">
         ${block.items.map((item) => `
-          <a class="content-card portfolio-link" href="${attr(item.link)}" data-embed-url="${attr(item.embedUrl || item.link)}" data-title="${attr(item.title)}">
+          <a class="content-card portfolio-link" href="${attr(item.link)}" ${mediaAttrs(item)} data-embed-url="${attr(item.embedUrl || item.link)}" data-title="${attr(item.title)}">
             <figure><img src="${attr(item.image)}" alt="${attr(item.brand || item.title)}"></figure>
             <div class="card-body">
               <span class="meta">${escapeHtml(item.brand || block.label)}</span>
@@ -367,10 +367,11 @@
   }
 
   function setupMediaActions() {
-    document.querySelectorAll(".portfolio-link").forEach((link) => {
+      document.querySelectorAll(".portfolio-link").forEach((link) => {
       link.addEventListener("click", (event) => {
         const href = link.getAttribute("href");
         if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+        if (link.dataset.externalOnly === "true") return;
         event.preventDefault();
         const title = link.dataset.title || "Portfolio preview";
         const embed = link.dataset.videoEmbed || link.dataset.embedUrl || href;
@@ -488,7 +489,8 @@
     return [
       item.videoEmbed ? `data-video-embed="${attr(item.videoEmbed)}"` : "",
       item.embedUrl ? `data-embed-url="${attr(item.embedUrl)}"` : "",
-      item.openAsPage ? `data-open-as-page="true"` : ""
+      item.openAsPage ? `data-open-as-page="true"` : "",
+      item.externalOnly ? `data-external-only="true" target="_blank" rel="noopener"` : ""
     ].filter(Boolean).join(" ");
   }
 
