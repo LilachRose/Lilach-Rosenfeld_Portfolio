@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rosenfeld Lilach - Creative Portfolio</title>
+    <meta name="description" content="Creative portfolio by Lilach Rosenfeld.">
+    <meta name="theme-color" content="#111014">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta property="og:title" content="Rosenfeld Lilach - Creative Portfolio">
+    <meta property="og:description" content="Creative portfolio by Lilach Rosenfeld.">
+    <meta property="og:type" content="website">
+    <link rel="preload" href="assets/contact-marketing-collage.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to portfolio</a>
+    <header class="site-header" aria-label="Portfolio navigation">
+      <a class="brand" href="#top" aria-label="Lilach Rosenfeld home">
+        <span>LR</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary"></nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero"></section>
+      <div id="sections"></div>
+    </main>
+
+    <footer class="footer">
+      <a href="assets/rosenfeld-lilach-website-portfolio.pdf" download>Download Portfolio</a>
+      <span>By Lilach Rosenfeld</span>
+    </footer>
+
+    <div id="media-modal" class="media-modal" role="dialog" aria-modal="true" aria-label="Portfolio media" hidden>
+      <button class="modal-close" type="button">Close</button>
+      <div class="modal-stage"></div>
+    </div>
+
+    <script src="portfolioData.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
