@@ -1396,6 +1396,11 @@ button {
     margin: 0 0 10px;
   }
 
+  .copy-grid .copy-card.image-trigger.no-title,
+  .copy-grid .copy-card.portfolio-link.no-title {
+    width: 100%;
+  }
+
   .copy-card.no-title figure {
     align-items: center;
     justify-content: center;
@@ -1436,9 +1441,13 @@ button {
     overflow-x: hidden;
   }
 
+  .modal-card.image {
+    padding-bottom: 72px;
+  }
+
   .gallery-arrow {
     top: auto;
-    bottom: 12px;
+    bottom: 0;
     transform: none;
   }
 

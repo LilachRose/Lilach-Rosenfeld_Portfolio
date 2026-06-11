@@ -108,7 +108,6 @@
           <p class="section-label">${escapeHtml(section.label)}</p>
           <h2>${escapeHtml(section.title)}</h2>
         </div>
-        <p class="intro">${escapeHtml(section.intro || fallbackIntro || sectionSubtitle(section))}</p>
       </div>
     `;
   }
