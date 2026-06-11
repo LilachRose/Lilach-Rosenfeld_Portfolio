@@ -1381,6 +1381,7 @@ button {
   .copy-card.no-title {
     grid-column: 1 / -1;
     grid-template-rows: 252px;
+    width: 100%;
   }
 
   .copy-card.story-break {
@@ -1402,6 +1403,8 @@ button {
     max-width: none;
     justify-self: stretch;
     align-self: stretch;
+    display: grid;
+    min-width: 100%;
   }
 
   .copy-card.no-title figure {
@@ -1469,6 +1472,29 @@ button {
 
   .gallery-next {
     right: 18px;
+  }
+}
+
+@media (min-width: 981px) {
+  .hub-shell {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hub-tabs {
+    position: static;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .hub-tab span {
+    display: none;
+  }
+
+  .hub-tab.active,
+  .hub-tab:hover,
+  .hub-tab:focus-visible {
+    transform: translateY(-2px);
   }
 }
 

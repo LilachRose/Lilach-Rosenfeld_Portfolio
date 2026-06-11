@@ -483,7 +483,7 @@
     modal.querySelector(".gallery-prev").addEventListener("click", () => openImageModal(activeGalleryIndex - 1));
     modal.querySelector(".gallery-next").addEventListener("click", () => openImageModal(activeGalleryIndex + 1));
     const imageCard = modal.querySelector(".modal-card.image");
-    const swipeSurface = modal.querySelector(".modal-stage");
+    const swipeSurface = modal;
     let touchStartX = 0;
     let touchStartY = 0;
     swipeSurface.addEventListener("touchstart", (event) => {
