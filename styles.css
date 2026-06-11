@@ -839,11 +839,11 @@ button {
 }
 
 #skills .skills-grid {
-  gap: 18px;
+  gap: 12px;
 }
 
 .skill-card {
-  padding: 24px;
+  padding: 18px 18px 16px;
   position: relative;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 240, 248, 0.88));
@@ -852,8 +852,8 @@ button {
 }
 
 .skill-card h3 {
-  margin-bottom: 16px;
-  font-size: 22px;
+  margin-bottom: 12px;
+  font-size: 19px;
 }
 
 .skill-card::before {
@@ -864,35 +864,32 @@ button {
   background: linear-gradient(90deg, #ff7fbd 0%, #00c4cc 100%);
 }
 
-#skills .skill-card:nth-child(2n) {
-  transform: translateY(10px);
-}
-
 .skill-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .skill-list li {
-  padding: 8px 10px;
+  padding: 6px 9px;
   color: #4d464f;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(217, 79, 162, 0.12);
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 760;
 }
 
 #skills.section {
-  padding-bottom: 44px;
+  padding-bottom: 28px;
 }
 
 #contact.section {
   padding-top: 28px;
+  padding-bottom: 12px;
 }
 
 .contact-panel {
@@ -963,7 +960,7 @@ button {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 28px var(--gutter);
+  padding: 14px var(--gutter) 20px;
   color: rgba(17, 16, 20, 0.62);
   font-size: 14px;
 }

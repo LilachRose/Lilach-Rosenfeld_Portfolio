@@ -280,7 +280,7 @@
     return `
       <div class="brand-grid reveal">
         ${section.items.map((item) => `
-          <a class="brand-card portfolio-link" href="${attr(item.link)}" data-embed-url="${attr(item.embedUrl || item.link)}" data-title="${attr(item.title)}">
+          <a class="brand-card portfolio-link" href="${attr(item.link)}" ${mediaAttrs(item)} data-embed-url="${attr(item.embedUrl || item.link)}" data-title="${attr(item.title)}">
             <figure><img src="${attr(item.image)}" alt="${attr(item.title)}"></figure>
             <h3>${escapeHtml(item.title)}</h3>
           </a>

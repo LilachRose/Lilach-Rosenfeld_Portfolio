@@ -174,7 +174,7 @@ window.portfolioData = {
           image: "assets/logo-megadin.jpg",
           alt: "Foodlicious",
           link: "https://www.youtube.com/playlist?list=PLrpAIOoT8urKgnfuoJ8E8_A5_3OyEnDR2",
-          embedUrl: "https://www.youtube.com/playlist?list=PLrpAIOoT8urKgnfuoJ8E8_A5_3OyEnDR2",
+          embedUrl: "https://www.youtube.com/embed/videoseries?list=PLrpAIOoT8urKgnfuoJ8E8_A5_3OyEnDR2",
           openAsPage: true
         },
         {
