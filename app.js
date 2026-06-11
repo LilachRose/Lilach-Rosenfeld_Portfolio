@@ -65,10 +65,12 @@
   galleryItems = collectGalleryItems();
 
   setupHubTabs();
+  syncAllHubPanels();
   setupMediaActions();
   setupReveal();
   activatePanelFromHash(window.location.hash);
   window.addEventListener("hashchange", () => activatePanelFromHash(window.location.hash));
+  window.addEventListener("resize", syncAllHubPanels);
 
   modalClose.addEventListener("click", closeModal);
   modal.addEventListener("click", (event) => {
@@ -341,6 +343,7 @@
             item.setAttribute("aria-selected", String(active));
           });
           panels.forEach((panel) => panel.classList.toggle("active", panel.dataset.panel === id));
+          syncHubPanels(shell);
         });
       });
     });
@@ -361,9 +364,46 @@
       item.setAttribute("aria-selected", String(active));
     });
     panels.forEach((item) => item.classList.toggle("active", item === panel));
+    syncHubPanels(shell);
     window.setTimeout(() => {
       panel.scrollIntoView({ block: "start", behavior: "smooth" });
     }, 60);
+  }
+
+  function isMobileLayout() {
+    return window.matchMedia("(max-width: 640px)").matches;
+  }
+
+  function syncAllHubPanels() {
+    document.querySelectorAll(".hub-shell").forEach(syncHubPanels);
+  }
+
+  function syncHubPanels(shell) {
+    if (!shell) return;
+    const tabs = Array.from(shell.querySelectorAll(".hub-tab"));
+    const panels = Array.from(shell.querySelectorAll(".hub-panel"));
+    const panelBank = shell.querySelector(".hub-panels");
+    const activeTab = tabs.find((tab) => tab.classList.contains("active")) || tabs[0];
+    if (!activeTab || !panelBank) return;
+    const activeId = activeTab.dataset.panel;
+
+    if (isMobileLayout()) {
+      panels.forEach((panel) => {
+        const isActive = panel.dataset.panel === activeId;
+        panel.classList.toggle("active", isActive);
+        if (isActive) {
+          activeTab.insertAdjacentElement("afterend", panel);
+        } else {
+          panelBank.appendChild(panel);
+        }
+      });
+      return;
+    }
+
+    panels.forEach((panel) => {
+      panelBank.appendChild(panel);
+      panel.classList.toggle("active", panel.dataset.panel === activeId);
+    });
   }
 
   function setupMediaActions() {
