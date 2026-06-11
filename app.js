@@ -483,6 +483,28 @@
     `);
     modal.querySelector(".gallery-prev").addEventListener("click", () => openImageModal(activeGalleryIndex - 1));
     modal.querySelector(".gallery-next").addEventListener("click", () => openImageModal(activeGalleryIndex + 1));
+    const imageCard = modal.querySelector(".modal-card.image");
+    let touchStartX = 0;
+    let touchStartY = 0;
+    imageCard.addEventListener("touchstart", (event) => {
+      const touch = event.changedTouches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+    imageCard.addEventListener("touchend", (event) => {
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+      if (absY > 80 && absY > absX && deltaY > 0) {
+        closeModal();
+        return;
+      }
+      if (absX > 60 && absX > absY) {
+        openImageModal(deltaX < 0 ? activeGalleryIndex + 1 : activeGalleryIndex - 1);
+      }
+    }, { passive: true });
   }
 
   function setupReveal() {

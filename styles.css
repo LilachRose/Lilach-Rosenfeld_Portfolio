@@ -1379,12 +1379,13 @@ button {
   }
 
   .copy-card.no-title {
-    grid-column: auto;
+    grid-column: 1 / -1;
     grid-template-rows: 252px;
   }
 
   .copy-card.story-break {
     grid-column: 1 / -1;
+    display: block;
     padding: 10px 0 0;
   }
 
@@ -1392,6 +1393,7 @@ button {
     color: #fff;
     font-size: 20px;
     line-height: 1.08;
+    margin: 0 0 10px;
   }
 
   .copy-card.no-title figure {
@@ -1434,12 +1436,18 @@ button {
     overflow-x: hidden;
   }
 
+  .gallery-arrow {
+    top: auto;
+    bottom: 12px;
+    transform: none;
+  }
+
   .gallery-prev {
-    left: 8px;
+    left: 12px;
   }
 
   .gallery-next {
-    right: 8px;
+    right: 12px;
   }
 }
 
