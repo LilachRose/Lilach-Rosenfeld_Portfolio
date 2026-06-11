@@ -483,14 +483,15 @@
     modal.querySelector(".gallery-prev").addEventListener("click", () => openImageModal(activeGalleryIndex - 1));
     modal.querySelector(".gallery-next").addEventListener("click", () => openImageModal(activeGalleryIndex + 1));
     const imageCard = modal.querySelector(".modal-card.image");
+    const swipeSurface = modal.querySelector(".modal-stage");
     let touchStartX = 0;
     let touchStartY = 0;
-    imageCard.addEventListener("touchstart", (event) => {
+    swipeSurface.addEventListener("touchstart", (event) => {
       const touch = event.changedTouches[0];
       touchStartX = touch.clientX;
       touchStartY = touch.clientY;
     }, { passive: true });
-    imageCard.addEventListener("touchend", (event) => {
+    swipeSurface.addEventListener("touchend", (event) => {
       const touch = event.changedTouches[0];
       const deltaX = touch.clientX - touchStartX;
       const deltaY = touch.clientY - touchStartY;

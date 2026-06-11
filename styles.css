@@ -1399,6 +1399,9 @@ button {
   .copy-grid .copy-card.image-trigger.no-title,
   .copy-grid .copy-card.portfolio-link.no-title {
     width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    align-self: stretch;
   }
 
   .copy-card.no-title figure {
@@ -1442,21 +1445,30 @@ button {
   }
 
   .modal-card.image {
-    padding-bottom: 72px;
+    padding-bottom: 0;
   }
 
   .gallery-arrow {
+    position: fixed;
     top: auto;
-    bottom: 0;
+    bottom: max(14px, env(safe-area-inset-bottom));
     transform: none;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 28px;
   }
 
   .gallery-prev {
-    left: 12px;
+    left: 18px;
   }
 
   .gallery-next {
-    right: 12px;
+    right: 18px;
   }
 }
 
