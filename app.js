@@ -176,7 +176,7 @@
 
   function renderFeature(block) {
     return `
-      <div class="feature-card">
+      <div class="feature-card feature-card-link portfolio-link" role="link" tabindex="0" data-href="${attr(block.link)}" ${mediaAttrs(block)} data-title="${attr(block.cta || block.title)}">
         <div class="feature-copy">
           <h3>${escapeHtml(block.title)}</h3>
           <a class="button portfolio-link" href="${attr(block.link)}" ${mediaAttrs(block)} data-title="${attr(block.cta || block.title)}">${escapeHtml(block.cta || "Open")}</a>
@@ -409,7 +409,8 @@
   function setupMediaActions() {
       document.querySelectorAll(".portfolio-link").forEach((link) => {
       link.addEventListener("click", (event) => {
-        const href = link.getAttribute("href");
+        if (link.classList.contains("feature-card-link") && event.target.closest(".button")) return;
+        const href = link.getAttribute("href") || link.dataset.href;
         if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
         if (link.dataset.externalOnly === "true") return;
         event.preventDefault();
@@ -432,6 +433,14 @@
           </div>
         `);
       });
+      if (link.classList.contains("feature-card-link")) {
+        link.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            link.click();
+          }
+        });
+      }
     });
     document.querySelectorAll(".image-trigger").forEach((trigger) => {
       trigger.addEventListener("click", () => {
