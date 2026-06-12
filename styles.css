@@ -1301,6 +1301,12 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .copy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .hero h1 {
     font-size: clamp(56px, 18vw, 86px);
   }
@@ -1383,7 +1389,7 @@ button {
   }
 
   .copy-card.no-title {
-    grid-column: 1 / -1;
+    grid-column: auto;
     grid-template-rows: 252px;
     width: 100% !important;
     inline-size: 100% !important;
@@ -1400,7 +1406,7 @@ button {
   }
 
   .copy-card.story-break {
-    grid-column: 1 / -1;
+    grid-column: auto;
     display: block;
     padding: 10px 0 0;
   }
@@ -1413,6 +1419,8 @@ button {
   }
 
   .copy-grid .copy-card.image-trigger.no-title,
+  .copy-grid .copy-card.image-trigger,
+  .copy-grid .copy-card.portfolio-link,
   .copy-grid .copy-card.portfolio-link.no-title {
     width: 100% !important;
     inline-size: 100% !important;
